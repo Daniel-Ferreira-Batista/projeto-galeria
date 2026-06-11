@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.galeria-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    padding: 20px;
+}
+
+.galeria-container > .card {
+    width: 200px;
+    height: 250px;
+    background-color: #f0f0f0; 
+    border-radius: 8px; 
+    overflow: hidden; /* Impede que a imagem saia das bordas do card no zoom */
+    cursor: pointer;
+}
+
+.galeria-container > .card > img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+    /* Avisa o navegador para animar transformações em 0.3 segundos com suavidade */
+    transition: transform 0.3s ease; 
+}
+
+/* Efeito Hover: Quando o mouse passa por CIMA DO CARD, a IMAGEM cresce */
+.galeria-container > .card:hover > img {
+    transform: scale(1.08); /* Aumenta a imagem em 8% de tamanho */
+}
